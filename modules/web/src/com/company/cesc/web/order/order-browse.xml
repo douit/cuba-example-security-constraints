@@ -27,7 +27,7 @@
                     width="100%">
             <actions>
                 <action id="create"/>
-                <action id="edit"/>
+                <action id="edit" constraintOperationType="update"/>
                 <action id="remove"/>
             </actions>
             <columns>

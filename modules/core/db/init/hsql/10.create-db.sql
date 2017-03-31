@@ -35,6 +35,7 @@ create table CESC_ORDER (
     STATUS varchar(50),
     CUSTOMER_ID varchar(36) not null,
     PAYMENT_METHOD varchar(50),
+    CLOSED boolean,
     --
     primary key (ID)
 )^

@@ -18,7 +18,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import com.haulmont.chile.core.annotations.NamePattern;
+import com.haulmont.cuba.core.entity.annotation.Listeners;
 
+@Listeners("cesc_OrderEntityListener")
 @NamePattern("%s|orderDate")
 @Table(name = "CESC_ORDER")
 @Entity(name = "cesc$Order")
@@ -44,6 +46,18 @@ public class Order extends StandardEntity {
 
     @Column(name = "PAYMENT_METHOD")
     protected String paymentMethod;
+
+    @Column(name = "CLOSED")
+    protected Boolean closed;
+
+    public void setClosed(Boolean closed) {
+        this.closed = closed;
+    }
+
+    public Boolean getClosed() {
+        return closed;
+    }
+
 
     public void setPaymentMethod(PaymentMethod paymentMethod) {
         this.paymentMethod = paymentMethod == null ? null : paymentMethod.getId();
