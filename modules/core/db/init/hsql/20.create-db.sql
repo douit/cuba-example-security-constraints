@@ -1,0 +1,14 @@
+-- begin CESC_ORDER
+alter table CESC_ORDER add constraint FK_CESC_ORDER_CUSTOMER foreign key (CUSTOMER_ID) references CESC_CUSTOMER(ID)^
+create index IDX_CESC_ORDER_CUSTOMER on CESC_ORDER (CUSTOMER_ID)^
+-- end CESC_ORDER
+-- begin CESC_PRODUCT
+alter table CESC_PRODUCT add constraint FK_CESC_PRODUCT_CATEGORY foreign key (CATEGORY_ID) references CESC_PRODUCT_CATEGORY(ID)^
+create index IDX_CESC_PRODUCT_CATEGORY on CESC_PRODUCT (CATEGORY_ID)^
+-- end CESC_PRODUCT
+-- begin CESC_LINE_ITEM
+alter table CESC_LINE_ITEM add constraint FK_CESC_LINE_ITEM_ORDER foreign key (ORDER_ID) references CESC_ORDER(ID)^
+alter table CESC_LINE_ITEM add constraint FK_CESC_LINE_ITEM_PRODUCT foreign key (PRODUCT_ID) references CESC_PRODUCT(ID)^
+create index IDX_CESC_LINE_ITEM_ORDER on CESC_LINE_ITEM (ORDER_ID)^
+create index IDX_CESC_LINE_ITEM_PRODUCT on CESC_LINE_ITEM (PRODUCT_ID)^
+-- end CESC_LINE_ITEM
