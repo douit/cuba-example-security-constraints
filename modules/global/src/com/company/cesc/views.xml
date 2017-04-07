@@ -16,11 +16,12 @@
     </view>
     <view class="com.company.cesc.entity.Order"
           extends="_local"
+          systemProperties="true"
           name="order-view">
         <property name="lineItems"
                   view="lineItem-view"/>
         <property name="customer"
-                  view="_minimal"/>
+                  view="_local"/>
     </view>
     <view class="com.company.cesc.entity.Customer"
           extends="_local"

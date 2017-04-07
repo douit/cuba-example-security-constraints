@@ -24,10 +24,11 @@
             <properties include=".*"/>
         </filter>
         <groupTable id="ordersTable"
+                    multiselect="true"
                     width="100%">
             <actions>
                 <action id="create"/>
-                <action id="edit" constraintOperationType="update"/>
+                <action id="edit"/>
                 <action id="remove"/>
             </actions>
             <columns>
@@ -35,6 +36,7 @@
                 <column id="status"/>
                 <column id="customer"/>
                 <column id="paymentMethod"/>
+                <column id="createdBy"/>
             </columns>
             <rows datasource="ordersDs"/>
             <rowsCount/>

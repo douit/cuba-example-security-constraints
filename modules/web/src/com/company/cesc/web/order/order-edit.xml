@@ -14,19 +14,50 @@
         </datasource>
         <collectionDatasource id="customersDs"
                               class="com.company.cesc.entity.Customer"
-                              view="_minimal">
+                              view="_local">
             <query>
                 <![CDATA[select e from cesc$Customer e]]>
             </query>
         </collectionDatasource>
+        <collectionDatasource id="ordersTableDs"
+                         class="com.company.cesc.entity.Order"
+                         view="order-view">
+            <query>
+                <![CDATA[select e from cesc$Order e where e.id = :ds$orderDs]]>
+            </query>
+        </collectionDatasource>
     </dsContext>
+
     <dialogMode height="600"
                 width="800"/>
     <layout expand="windowActions"
             spacing="true">
+        <table id="ordersTable"
+                    multiselect="true"
+                    width="100%" height="200px">
+            <actions>
+                <action id="deliverOrderAction"
+                        caption="msg://deliverOrder"
+                        trackSelection="true"
+                        constraintOperationType="custom"
+                        constraintCode="deliverOrder"
+                        invoke="deliverOrder"/>
+            </actions>
+            <columns>
+                <column id="id" />
+            </columns>
+            <rows datasource="ordersTableDs" />
+        </table>
+
+        <buttonsPanel id="buttonsPanel">
+            <button id="deliverOrderBtn"
+                    action="ordersTable.deliverOrderAction"
+                    icon="font-icon:SEND"/>
+        </buttonsPanel>
         <fieldGroup id="fieldGroup"
                     datasource="orderDs">
             <column width="250px">
+                <field id="id"/>
                 <field id="orderDate"/>
                 <field id="status"/>
                 <field id="customer"
