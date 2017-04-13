@@ -118,6 +118,27 @@ insert into SEC_CONSTRAINT
 (ENTITY_NAME, JOIN_CLAUSE, WHERE_CLAUSE, GROUP_ID, VERSION, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, ID, CREATE_TS, CREATED_BY)
 values ('cesc$Customer', null, '{E}.state = ''NH'' or {E}.state = ''MA''', '51afb332-2cd8-fd77-0218-5eb040d1edc9', 1, '2016-02-03 08:58:26', null, null, null, 'f10aaade-4316-968c-e797-bf700374c153', '2016-02-03 08:58:26', 'admin');
 
+
+insert into SEC_GROUP_HIERARCHY
+(ID, GROUP_ID, PARENT_ID, HIERARCHY_LEVEL)
+values ('c0984b8b-1ad7-c626-00b6-934d1c445192', '51afb332-2cd8-fd77-0218-5eb040d1edc9', '0fa2b1a5-1d68-4d69-9fbd-dff348347f93', 0);
+
+insert into SEC_GROUP_HIERARCHY
+(ID, GROUP_ID, PARENT_ID, HIERARCHY_LEVEL)
+values ('d633407f-10bf-e025-bbbf-18abecc3326e', '51afb332-2cd8-fd77-0218-5eb040d1edc9', '6eef1d32-0794-7c39-d79c-6c1b889d4a46', 1);
+
+insert into SEC_GROUP_HIERARCHY
+(ID, GROUP_ID, PARENT_ID, HIERARCHY_LEVEL)
+values ('88b1a130-d2bd-c097-848d-60b2208b5e0b', 'f76d4b65-ed25-17e8-293b-c5548aa2f16d', '0fa2b1a5-1d68-4d69-9fbd-dff348347f93', 0);
+
+insert into SEC_GROUP_HIERARCHY
+(ID, GROUP_ID, PARENT_ID, HIERARCHY_LEVEL)
+values ('6fe8bf5e-437e-32f2-7705-430748f436b2', '6eef1d32-0794-7c39-d79c-6c1b889d4a46', '0fa2b1a5-1d68-4d69-9fbd-dff348347f93', 0);
+
+insert into SEC_GROUP_HIERARCHY
+(ID, GROUP_ID, PARENT_ID, HIERARCHY_LEVEL)
+values ('59581e14-492c-6177-8905-15553cdcdcf7', 'f76d4b65-ed25-17e8-293b-c5548aa2f16d', '6eef1d32-0794-7c39-d79c-6c1b889d4a46', 1);
+
 -- roles
 
 -- Master Data Manager

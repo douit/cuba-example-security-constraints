@@ -48,6 +48,8 @@
                         action="ordersTable.edit"/>
                 <button id="removeBtn"
                         action="ordersTable.remove"/>
+                <button id="sendInvoiceBtn"
+                        action="ordersTable.sendInvoiceAction"/>
             </buttonsPanel>
         </groupTable>
     </layout>
